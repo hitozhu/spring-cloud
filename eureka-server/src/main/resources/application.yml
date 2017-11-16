@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: erueka-server
+
+server:
+  port: 10001
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registey: false
+  instance:
+    hostname: localhost
