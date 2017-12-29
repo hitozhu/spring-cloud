@@ -2,8 +2,7 @@ package com.htzhu;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,21 +10,19 @@ import org.springframework.web.client.RestTemplate;
  * Application
  *
  * @author zhuhaitao
- * @date 2017/11/16 下午11:39
+ * @date 2017/12/5 上午12:14
  */
+@EnableDiscoveryClient
 @SpringBootApplication
-@EnableEurekaClient
-public class Application {
+public class ConsumerApplication {
 
     @Bean
-    @LoadBalanced
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(Application.class)
-                .web(true).run(args);
+        new SpringApplicationBuilder(ConsumerApplication.class).web(true).run(args);
     }
 
 }

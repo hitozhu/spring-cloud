@@ -22,6 +22,14 @@
         <module>config-server</module>
     </modules>
 
+    <repositories>
+        <repository>
+            <id>aliyun-maven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -51,6 +59,22 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>1.16.18</version>
+            </dependency>
+
+            <!-- 热部署 -->
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <version>1.5.8.RELEASE</version>
+                <optional>true</optional>
+            </dependency>
+
+            <!-- 热部署 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <optional>true</optional>
             </dependency>
 
             <!--<dependency>
@@ -83,6 +107,9 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>1.5.6.RELEASE</version>
+                    <configuration>
+                        <executable>true</executable>
+                    </configuration>
                 </plugin>
 
                 <plugin>

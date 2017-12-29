@@ -54,7 +54,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.htzhu.Application</mainClass>
+                    <mainClass>com.htzhu.ConfigServerApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
