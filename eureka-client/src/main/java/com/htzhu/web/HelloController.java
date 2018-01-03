@@ -29,8 +29,7 @@ public class HelloController {
         ServiceInstance instance = client.getLocalServiceInstance();
         String res = "hi host:" + instance.getHost() + " port:" + instance.getPort();
         log.info("hi host:" + instance.getHost() + " port:" + instance.getPort());
-
-        return res + " " + fileName;
+        return res;
     }
 
 }

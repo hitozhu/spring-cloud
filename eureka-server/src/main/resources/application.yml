@@ -1,13 +1,13 @@
 spring:
   application:
-    name: erueka-server
+    name: erueka-server # 服务名称
 
 server:
-  port: 10001
+  port: 10001   # 服务端口号
 
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false   # 是否注册自己。
+    fetch-registry: false   # 是否拉取注册中心服务信息。
   instance:
     hostname: localhost

@@ -67,16 +67,18 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <!-- 主类 -->
                     <mainClass>com.htzhu.EurekaServerApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
                         <goals>
+                            <!-- 将mvn package生成的软件包，再次打包为可执行的软件包，
+                            并将mvn package生成的软件包重命名为*.original -->
                             <goal>repackage</goal>
                         </goals>
                     </execution>
                 </executions>
-
             </plugin>
         </plugins>
     </build>
