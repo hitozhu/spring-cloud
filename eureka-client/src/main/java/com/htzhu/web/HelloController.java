@@ -1,5 +1,9 @@
 package com.htzhu.web;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.Date;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,7 +25,7 @@ public class HelloController {
     @Autowired
     private DiscoveryClient client;
 
-    @Value("${file.name}")
+//    @Value("${file.name}")
     private String fileName;
 
     @GetMapping("/hi")
@@ -30,6 +34,22 @@ public class HelloController {
         String res = "hi host:" + instance.getHost() + " port:" + instance.getPort();
         log.info("hi host:" + instance.getHost() + " port:" + instance.getPort());
         return res;
+    }
+
+    @Data
+    public class Student {
+        private Integer id;
+        private String name;
+        private Date date;
+    }
+
+    @GetMapping(value = "/student")
+    public Student getStudent() {
+        Student student = new Student();
+        student.setId(1);
+        student.setName("htzhu");
+        student.setDate(new Date());
+        return student;
     }
 
 }

@@ -1,14 +1,17 @@
 spring:
   application:
     name: config-client # 实例名
-  cloud:
-    # 配置中心相关配置
-    config:
-      discovery:
-        enabled: true
-        service-id: config-server
-      profile: default
-      label: master
+#  cloud:
+#    # 配置中心相关配置
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: config-server
+#      profile: default
+#      label: master
+  jackson:
+#    date-format: 'yyyy-MM-dd HH:mm:ss'
+    time-zone: GMT+8
 
 server:
   port: 2002  # 端口号
@@ -20,4 +23,5 @@ eureka:
     lease-renewal-interval-in-seconds: 10 # 心跳时间，服务续约时间，默认 30s
   client:
     serviceUrl:
-      defaultZone: http://qrshi7:10001/eureka/  # 注册中心地址
+#      defaultZone: http://qrshi7:10001/eureka/  # 注册中心地址
+      defaultZone: http://localhost:10001/eureka/  # 注册中心地址
